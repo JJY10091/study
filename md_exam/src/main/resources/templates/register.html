@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>M.S.P : 회원가입</title>
+	<link rel="stylesheet" th:href="@{/css/register.css}">
+	<link rel="stylesheet" th:href="@{/css/reset.css}">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+</head>
+
+<body>
+		<div class="container">			
+			<div class="reg-container">
+                <div class="logo_box">                    
+                    <div class="logo-wrap">
+                        <a href="./index.html"><img src="./images/nocolorlogo.png" alt=""></a>
+                    </div>                                        
+                </div>
+				<div class="content">
+					<form action="" class="form">
+						<div class="log_info">
+							<ul>
+								<li>
+									<input type="text" name="" class="email" placeholder="* 아이디"
+										autocomplete="off">
+								</li>
+								<li>
+									<input type="password" name="passwd" class="passwd" placeholder="* 비밀번호">
+								</li>
+								<li>
+									<input type="password" name="re_passwd" class="re_passwd" placeholder="* 비밀번호 확인">
+								</li>
+							</ul>
+						</div>
+						<div class="privacy_info">
+							<ul>
+								<li>
+									<input type="text" name="user_name" class="user_name" placeholder="* 이름"
+										autocomplete="off">
+								</li>
+								<li>
+									<input type="text" name="birth" class="birth" placeholder="* 생년월일"
+										autocomplete="off">
+								</li>								
+
+								<li>
+									<div class="radio_container">
+										<div class="radio_box">
+											<input type="radio" id="men" name="gender" class="gender">
+											<label for="men" class="ko">남자</label>
+										</div>
+
+										<div class="radio_box">
+											<input type="radio" id="women" name="gender" class="gender">
+											<label for="women" class="ko">여자</label>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>						
+						<ul>
+							<li><input type="submit" class="btn ko" value="회원가입"></li>
+						</ul>												
+					</form>
+				</div>
+                <div class="find_wrap">                
+                    <a href="./login.html" class="ko">로그인 페이지로 이동</a>                   
+                </div>
+			</div>            
+		</div>
+	
+</body>
+
+</html>
