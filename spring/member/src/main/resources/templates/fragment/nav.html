@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="ko">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<nav th:fragment="nav_f">
+		<a th:href="@{/}">웹 페이지로 이동</a>
+		<a th:href="@{/member/insert}">회원가입</a>
+
+		<th:block th:if="${ #strings.isEmpty(session.user) }">
+			<a th:href="@{/login}">로그인</a>
+		</th:block>
+
+		<th:block th:unless="${ #strings.isEmpty(session.user) }">
+			<a th:href="@{/logout}">로그아웃</a>
+		</th:block>
+
+	</nav>
+</body>
+</html>

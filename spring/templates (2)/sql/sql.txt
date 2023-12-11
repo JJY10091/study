@@ -1,0 +1,22 @@
+회원 table
+userid - pk
+email
+passwd
+username
+gender
+regdate
+birth
+phone_num
+
+
+게시판 table
+userid - fk(회원)
+id - pk
+subject
+writer
+content
+visit
+regdate
+grp
+seq
+depth

@@ -1,0 +1,19 @@
+@charset 'utf-8';
+ /* reset 시작 */
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+
+}
+
+body {
+    background-color: #eee;
+}
+
+ul li {
+    list-style: none;
+}
+
+/* reset 끝 */

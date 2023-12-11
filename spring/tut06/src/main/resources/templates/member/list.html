@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Member List</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+	<style>
+		td {
+			border: 1px solid #ccc;
+		}
+	</style>
+</head>
+
+<body>
+
+	<div class="container">
+		<a href="/member/add">Add Member</a>
+		<form>
+			<table>
+				<thead>
+					<tr>
+						<td>Member No.</td>
+						<td>Member ID.</td>
+						<td>Member Pwd.</td>
+						<td>Member Marks.</td>
+					</tr>
+				</thead>
+				<tbody>
+
+				<tbody>
+
+			</table>
+		</form>
+	</div>
+
+	<script>
+		<!--화면에 접속하면 실행 되는 함수-->
+		$(function () {
+
+			$.ajax({
+				type: "get",
+				url: "/member/getMembers",
+				dataType: "json",
+				success: function (res) {
+					//데이터(tr>td) 이어붙이기
+					let output = "";
+
+					res.members.forEach((m) => {
+						output += `<tr>
+										<td>${m.num}</td>
+										<td>${m.userid}</td>
+										<td>${m.passwd}</td>
+										<td>
+											<a href="">수정</a>
+											<a href="">삭제</a>
+										</td>
+									</tr>`;
+					});
+
+					document.querySelector("tbody").innerHTML = output;
+				}
+			});
+		});
+	</script>
+
+</body>
+
+</html>

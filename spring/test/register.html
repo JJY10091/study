@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입 화면</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #eee;
+        }
+
+        ul li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        .form_wrap {
+            width: 450px;
+            background-color: #fff;
+
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 0 3px 3px #f0d0d3;
+
+            border-radius: 5px;
+            padding: 20px 30px;
+        }
+
+        img {
+            display: block;
+            width: 100px;
+            margin: 10px auto;
+        }
+
+        .logo_content {
+            text-align: center;
+            padding-bottom: 30px;
+        }
+
+        form {
+            display: block;
+            width: 100%;
+        }
+
+        ul li label {
+            display: block;
+            font-size: 14px;
+        }
+
+        ul li input {
+            outline: none;
+            width: 100%;
+            height: 35px;
+            border: 1px solid #eee;
+            margin-bottom: 15px;
+        }
+
+        .radio_box {
+            font-size: 14px;
+
+        }
+
+        .radio_box input {
+            margin: 6px 3px;
+            font-family: 'Roboto', sans-serif;
+
+        }
+
+        input[type="radio"] {
+            width: 15px;
+            height: 15px;
+            vertical-align: -3px;
+        }
+
+        .radio_box span {
+            margin-right: 10px;
+        }
+
+        ul li input:focus {
+            border: 4px solid #c2dbfe;
+        }
+
+        button {
+            font-family: 'Roboto', sans-serif;
+            float: right;
+            border: 0;
+            background-color: #0b5ed7;
+            color: #fff;
+            border-radius: 1px;
+            padding: 8px 12px;
+            cursor: pointer;
+        }
+
+        .move {
+            font-size: 14px;
+            margin: 60px 0;
+        }
+
+        .select_box {
+            display: flex;
+            justify-content: space-between;
+            margin: 10px 0;
+        }
+
+        .select_box p {
+            font-size: 14px;
+        }
+
+        .dept_sel {
+            width: 50%;
+        }
+
+        .pos_sel {
+            width: 50%;
+        }
+
+        select {
+            outline: none;
+            border: 1px solid #eee;
+            width: 95%;
+            height: 40px;
+        }
+
+        select:focus {
+            border: 4px solid #c2dbfe;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="form_wrap">
+            <div class="regi_box">
+                <img src="images/KOR_LOGO.png" alt="">
+            </div>
+            <div class="logo_content">
+                <h3>KIT MANAGEMENT SYSTEM</h3>
+            </div>
+
+            <form action="">
+                <ul>
+                    <li>
+                        <label>
+                            Email.
+                        </label>
+                        <input type="text" name="email" class="email">
+                    </li>
+                    <li>
+                        <label>
+                            Password.
+                        </label>
+                        <input type="password" name="passwd" class="passwd">
+                    </li>
+                    <li>
+                        <label>
+                            Re-Password.
+                        </label>
+                        <input type="password" name="rePasswd" class="rePasswd">
+                    </li>
+                    <li>
+                        <label>
+                            Name.
+                        </label>
+                        <input type="text" name="name" class="name">
+                    </li>
+
+                    <div class="radio_box">
+                        <p>Gender.</p>
+                        <input type="radio" name="gender" value="M"><span>MAN</span>
+                        <input type="radio" name="gender" value="W"><span>WOMAN</span>
+                    </div>
+
+                    <div class="select_box">
+                        <div class="dept_sel">
+                            <p>Dept.</p>
+                            <select name="dept" id="dept">
+                                <option value="">Choose One</option>
+                                <option value="100">인사과</option>
+                                <option value="200">자재과</option>
+                            </select>
+                        </div>
+                        <div class="pos_sel">
+                            <p>Position.</p>
+                            <select name="pos" id="pos">
+                                <option value="">Choose Two</option>
+                                <option value="001">신입</option>
+                                <option value="002">대리</option>
+                                <option value="003">과장</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button type="submit">
+                        REGISTER
+                    </button>
+                </ul>
+            </form>
+            <p class="move"><a href="login.html">Would you like to Login?</a></p>
+        </div>
+    </div>
+
+    <script>
+
+        let btn = document.querySelector("button");
+        let email = document.querySelector(".email");
+        let passwd = document.querySelector(".passwd");
+        let rePasswd = document.querySelector(".rePasswd");
+        let name = document.querySelector(".name");
+
+        let dept = document.querySelector("#dept");
+        let pos = document.querySelector("#pos");
+
+        // let gender = document.querySelector('input[name="gender"]:checked');
+
+
+        let gender = document.querySelector('input[name="gender"]:checked');
+        let selectedRadio = document.querySelector('input[name="gender"]:checked');
+
+
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+
+            // 선택된 라디오 버튼이 없으면 경고 메시지 출력 후 제출 방지
+            if (!selectedRadio) {
+                alert('라디오 버튼 중 하나를 선택해주세요.');
+                return false;
+            }
+
+
+
+
+            // if (email.value == "") {
+            //     alert("이메일을 입력하세요");
+            //     email.focus();
+            //     return false;
+            // }
+
+            // if (passwd.value == "") {
+            //     alert("비밀번호를 입력하세요");
+            //     passwd.focus();
+            //     return false;
+            // }
+
+            // if (passwd.value != rePasswd.value) {
+            //     alert("동일한 비밀번호를 입력해주세요");
+            //     passwd.value = "";
+            //     rePasswd.value = "";
+            //     passwd.focus();
+
+            //     return false;
+            // }
+
+            // if (name.value == "") {
+            //     alert("이름을 입력하세요");
+            //     name.focus();
+            //     return false;
+            // }
+
+
+            // if (dept.options[dept.selectedIndex].value == "") {
+            //     alert("부서를 선택하세요.");
+            //     return false;
+            // }
+
+            // if (pos.options[pos.selectedIndex].value == "") {
+            //     alert("직책을 선택하세요.");
+            //     return false;
+            // }
+        });
+
+    </script>
+</body>
+
+</html>
