@@ -50,23 +50,33 @@ hr {
 }
 
 
+
+/*-----------------------수정--------------------------*/
+
 .login-wrap {
     width: 1280px;
     margin: 0 auto;
-    text-align: end;
+/*    text-align: end; */
     /* background-color: gray; */
     padding: 6px;
-   
-    
-    
-    
+
+    display:flex;
+    justify-content:space-between;
+
 }
+.login-wrap p {
+    font-size: 14px;
+}
+/*-----------------------수정-------------------------*/
+
+
+
+
 
 .login-wrap a{
     margin-right: 8px;
     color: rgba(0, 0, 0, 0.7);
     font-size: 14px;
-    
 }
 
 

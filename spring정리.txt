@@ -30,8 +30,15 @@ Controller에서 객체를 생성하네? -> ModelAttribute RegDto
 lombok을 써서 그런가 RegDto에는 필드만 있네
 form에서 input name이 RegDto의 필드 이름이 동일하면 객체로 저장되네 
 
+form 전송 ( ajax X )
+
 챗집 : Spring MVC에서 폼 데이터를 받아오는 경우, 입력 폼의 name 속성과 DTO 객체의 필드(변수)명이 일치하면 자동으로 데이터가 매핑되어 DTO 객체에 저장됩니다. 이는 Spring의 데이터 바인딩 메커니즘에 의한 것입니다.
 
+
+-tut04
+버튼 이벤트에 ajax를 사용해서 전송
+ajax에서 obj의 이름이 Dto와 연결되네
+for in 사용
 
 
 

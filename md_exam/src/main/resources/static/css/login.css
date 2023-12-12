@@ -60,6 +60,15 @@ ul li {
     margin: 0 auto;
 }
 
+/*--------수정----------*/
+
+.form_box p {
+    font-size: 14px;
+    color: tomato;
+}
+
+/*--------수정----------*/
+
 .form_box h2 {
     text-align: center;
     margin-bottom: 80px;
